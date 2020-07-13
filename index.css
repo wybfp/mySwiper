@@ -1,0 +1,40 @@
+* {
+  margin: 0;
+  padding: 0;
+  /* li标签样式 */
+  list-style: none;
+  /* a标签样式 */
+  text-decoration: none;
+}
+#banner {
+  position: relative;
+  height: 440px;
+  width: 660px;
+  overflow: hidden;
+  border: 3px solid red;
+}
+#imglist {
+  /* 660*5 */
+  width: 2500px;
+  height: 440px;
+  border: 3px solid blue;
+}
+#imglist li {
+  float: left;
+}
+#iconlist {
+  position: absolute;
+  right: 20px;
+  bottom: 10px;
+}
+#iconlist li {
+  float: left;
+  width: 25px;
+  height: 25px;
+  border: 1px solid rgb(7, 7, 7);
+  border-radius: 13px;
+  text-align: center;
+  line-height: 25px;
+  margin-left: 5px;
+  cursor: pointer;
+}

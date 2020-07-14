@@ -3,25 +3,27 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>D.O.</title>
     <link rel="stylesheet" href="./index.css" />
-    <title>D.O的轮播图</title>
   </head>
   <body>
-    <div id="banner">
-      <ul id="imglist">
-        <li><a href=""><img src="./img/1.jpg" alt=""></a></li>
-        <li><a href=""><img src="./img/2.jpg" alt=""></a></li>
-        <li><a href=""><img src="./img/3.jpg" alt=""></a></li>
-        <li><a href=""><img src="./img/4.jpg" alt=""></a></li>
-        <li><a href=""><img src="./img/1.jpg" alt=""></a></li>
+    <div class="swiper">
+      <ul id="show" class="showplace">
+        <li><img src="./img/1.jpg" alt="" /></li>
+        <li><img src="./img/2.jpg" alt="" /></li>
+        <li><img src="./img/3.jpg" alt="" /></li>
+        <li><img src="./img/4.jpg" alt="" /></li>
+        <li><img src="./img/1.jpg" alt="" /></li>
       </ul>
-      <ul id="iconlist">
-        <li>1</li>
-        <li>2</li>
-        <li>3</li>
-        <li>4</li>
+      <ul id="icon" class="dot">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
       </ul>
+      <div id="left" class="arrow_left"></div>
+      <div id="right" class="arrow_right"></div>
     </div>
-  <script src="./index.js"></script>
+    <script src="./index.js"></script>
   </body>
 </html>

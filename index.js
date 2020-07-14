@@ -1,56 +1,66 @@
-// 获取图片标签
-var imgs = document.getElementById("imglist").getElementsByTagName("li");
-// 获取列表
-var icons = document.getElementById("iconlist").getElementsByTagName("li");
-// 初始化图片位置
-var left = 0;
-imglist.style.marginLeft = left + "px";
-// 设置一个计时器
-var timer;
+var imgs = document.getElementById("show").getElementsByTagName("li");
+var icons = document.getElementById("icon").getElementsByTagName("li");
+var next =document.getElementById('right');
+var back =document.getElementById('left');
 
-// 触发
+
+var left = 0;
+var timer = 100;
 run();
 function run() {
-  if (left <= -1500) {
+  if (left % 440 == 0) {
+    n = 1000;
+  } else {
+   n = 10;
+  }
+  if (left <= -1760) {
     left = 0;
-    imglist.style.marginLeft = left + "px";
+    show.style.marginLeft = left + "px";
   }
-  // 如果位置为整张图片，暂停一秒钟
-  var n = left % 660 == 0 ? 1000 : 10;
-  changeimg();
-
-  // 计算图片下标
-  var m = Math.floor(-left / 660);
-  changeicon(m);
-
-  left -= 10;
-  timer = setTimeout(run, n);
+  left += -10;
+  show.style.marginLeft = left + "px";
+  changeicon(Math.floor(-left / 440) % (imgs.length - 1));
+  //   console.log(timer)
+  // var t = setTimeout("javascript语句", 毫秒) 
+  // 希望取消这个 setTimeout()，你可以使用这个变量名来指定它。
+ timer= setTimeout(run, n);
 }
-
-// setInterval(run,10);
-function changeimg() {
-  imglist.style.marginLeft = left + "px";
-}
-
-function changeicon(m) {
+//  setInterval(run, timer);
+function changeicon(n) {
   for (var i = 0; i < icons.length; i++) {
-    icons[i].style.backgroundColor = "";
+    icons[i].style.backgroundColor = "white";
   }
-  icons[m].style.backgroundColor = "red";
+  icons[n].style.backgroundColor = "pink";
 }
 
-//绑定图片事件
 for (var i = 0; i < imgs.length; i++) {
-  // i的作用域--闭包解决
-  (function (i) {
+  (function(i){
     imgs[i].onmousemove = function () {
       clearTimeout(timer);
-      left = -i * 660;
-      changeimg();
       changeicon(i);
+      left = -i * 440;
+      show.style.marginLeft = left + "px";
     };
     imgs[i].onmouseout = function () {
       run();
     };
   })(i);
+}
+
+next.onclick=function(){
+  if(Math.floor(-left/440)<4){
+  left-=440;
+  show.style.marginLeft = left + "px";
+  changeicon(Math.floor(-left / 440) % (imgs.length - 1));
+  }
+  // console.log(left);
+}
+
+back.onclick=function(){
+  if(Math.floor(-left/440)>0){
+  left+=440;
+  show.style.marginLeft = left + "px";
+  changeicon(Math.floor(-left / 440) % (imgs.length - 1));
+  }
+  console.log(left);
 }

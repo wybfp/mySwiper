@@ -1,40 +1,81 @@
+@font-face {
+  font-family: "iconfont";
+  src: url('./font/iconfont.eot?t=1594655089536'); /* IE9 */
+  src: url('./font/iconfont.eot?t=1594655089536#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('data:application/x-font-woff2;charset=utf-8;base64,d09GMgABAAAAAALAAAsAAAAABsAAAAJ0AAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHEIGVgCDBgqBKIEgATYCJAMMCwgABCAFhG0HNRvlBcgusG3kMwOjEEcB35/42QcA/Iig2vutZ3ffu5CjyqH8qcsEhaIwHgXCI2R2KIHPGv2X5vL+xySXoQJEhf7a5gqc5kkOUJPwLOw0CbkJtwSMW2xRma/tOZy9/T+X05u+QK7x7SyXOcbzo16A8eRA98AosiIKgFtkF3EnLuIxgVaT+qSuNvYORbkCrQrEa9uUoryQUhSj2izUDQeLeK/SnN6mb7yLvh//bEQ5SZWhjdev1g2x9NPPswZPHJEmyMcrZKwTCvG8sXSnSBhskVZTcXdzrQhprmyjQaTyLfVO/3iJqKHOdrAslxM/UZ7g549IIIO6WFkl7Chk/8UhBgb0lvvbzMeTVvVw29x8pwUN5si15jBD0YK1KTq3Hy4/r9asTkyO1oztTKzVrD1RfTtqgrVqMfKtnpqbG5MzjazvUXm9q7XipZ9JH9MHpKn0KRB80OHq5v43txXwI0WOAhah+TTh4LepgT3F1yJ3Lq6KqsJINgAIJGSFGdWAYr3+xlsGwNOE5hGRJhMZZM3m0UKuQ6XNFtSanUKrNZvH2/QhRaK0YNWFBKHbOySdvkPW7Qct5C9UBv1DrTuKoNVNNF3YZjHsylVCyWiAVgBbDwNFvFwZd++jmfEk5bURd4yU2FkYHhgqVzcxQJpjS5I1R5gVKAp92JCeQ88LIaLQQZ0HLOZoZnBQNb1pQA99UekSQRJDBqApADZdKKD4YFZZ+fw+ZMrwSNQh6MkeQyRhzw6GDRgCoJumACS4l1cSWaYRjClAISEf2JDmIY8nBKLmeQ6kYwOsEYXIjEHcT0FNA+tb/O87BK3QTTlS5CjKG8xzsSZ1Vwg=') format('woff2'),
+  url('./font/iconfont.woff?t=1594655089536') format('woff'),
+  url('./font/iconfont.ttf?t=1594655089536') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
+  url('./font/iconfont.svg?t=1594655089536#iconfont') format('svg'); /* iOS 4.1- */
+}
+
 * {
-  margin: 0;
   padding: 0;
-  /* li标签样式 */
+  margin: 0;
   list-style: none;
-  /* a标签样式 */
-  text-decoration: none;
 }
-#banner {
-  position: relative;
-  height: 440px;
-  width: 660px;
+.swiper {
+  width: 430px;
+  height: 660px;
+  /* border: 1px solid orchid; */
   overflow: hidden;
-  border: 3px solid red;
+  margin: 0 auto;
+  position: relative;
 }
-#imglist {
-  /* 660*5 */
-  width: 2500px;
-  height: 440px;
-  border: 3px solid blue;
+.showplace {
+  width: 2200px;
+  height: 660px;
+  /* border: 3px solid red; */
 }
-#imglist li {
+.showplace li {
   float: left;
 }
-#iconlist {
+.dot {
   position: absolute;
-  right: 20px;
-  bottom: 10px;
+  left: 145px;
+  bottom: 3px;
 }
-#iconlist li {
+.dot li {
   float: left;
-  width: 25px;
-  height: 25px;
-  border: 1px solid rgb(7, 7, 7);
-  border-radius: 13px;
-  text-align: center;
-  line-height: 25px;
-  margin-left: 5px;
-  cursor: pointer;
+  margin-left: 20px;
+  width: 10px;
+  height: 10px;
+  background-color: floralwhite;
+  border: 1px soli;
+  border-radius: 50%;
+  box-shadow: 0px 0px 10px rgb(0, 0, 0, 0.8);
+}
+ div[class^="arrow"] {
+  position: absolute;
+  float: left;
+  width: 50px;
+  height: 50px;
+  border:1px  grey;
+  border-radius: 50%;
+  background-color: grey;
+  box-shadow: 0px 0px 10px rgba(43, 42, 42, 0.8);
+}
+
+.swiper .arrow_left{
+  left: -25px;
+  bottom: 355px;
+}
+.swiper .arrow_right{
+  /* left: 339px; */
+  right: -25px;
+  bottom: 355px;
+}
+
+.arrow_left::after{
+  position: absolute;
+  right: 5px;
+  top: 16px;
+  content: "\e6db";
+  font-family: "iconfont";
+}
+.arrow_right::before{
+  position: absolute;
+  left: 5px;
+  top: 16px;
+  content: "\e6a2";
+  font-family: "iconfont";
 }
